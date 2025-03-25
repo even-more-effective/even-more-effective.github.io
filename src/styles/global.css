@@ -1,0 +1,135 @@
+/* Global styles - dark theme like Obsidian */
+:root {
+    --color-bg: #131313;
+    --color-text: #ffffff;
+    --color-text-secondary: #9b9b9b;
+    --color-accent: #8b6bff;
+    --color-accent-hover: #a28aff;
+    --color-footer-bg: #0c0c0c;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+  
+  /* Prevent body scrolling when mobile menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: var(--color-accent-hover);
+    text-decoration: none;
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: none;
+    padding: 0.8rem 0;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+  }
+  
+  /* Responsive typography */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive spacing */
+  section {
+    padding: 4rem 0;
+  }
+  
+  @media (max-width: 768px) {
+    section {
+      padding: 3rem 0;
+    }
+    
+    .container {
+      padding: 0 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    section {
+      padding: 2rem 0;
+    }
+    
+    .btn, .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  /* Add a subtle fade-in animation for page elements */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
