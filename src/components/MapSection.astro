@@ -1,0 +1,146 @@
+---
+---
+
+<section class="map-section">
+  <div class="container">
+    <h2>Ubicación</h2>
+    <p class="subtitle">Encuéntranos en la Universidad Politécnica de Yucatán</p>
+    
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.7991133969286!2d-89.66319972393126!3d21.01383198059363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5677db5aa3bd05%3A0x8487f5bc1ec52c59!2sUniversidad%20Polit%C3%A9cnica%20de%20Yucat%C3%A1n!5e0!3m2!1ses-419!2smx!4v1711656553492!5m2!1ses-419!2smx" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    
+    <div class="contact-info">
+      <div class="info-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h3>Dirección</h3>
+          <p>Carretera Mérida-Tetiz Km 4.5, 97305 Mérida, Yuc., México</p>
+        </div>
+      </div>
+      
+      <div class="info-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:effectivealtruismupy@gmail.com">effectivealtruismupy@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .map-section {
+    padding: 5% 2%;
+    background-color: var(--color-bg);
+    position: relative;
+  }
+  
+  .map-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+  
+  .map-container {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .info-item {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(139, 107, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+  }
+  
+  .info-item:hover {
+    background-color: rgba(139, 107, 255, 0.15);
+    transform: translateY(-5px);
+  }
+  
+  .info-item svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+  
+  .info-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .info-item p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+  
+  .info-item a {
+    color: var(--color-accent);
+    transition: color 0.3s ease;
+  }
+  
+  .info-item a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .map-section h2 {
+      font-size: 2rem;
+    }
+    
+    .contact-info {
+      flex-direction: column;
+    }
+    
+    .info-item {
+      min-width: 100%;
+    }
+    
+    .map-container {
+      height: 300px;
+    }
+    
+    .map-container iframe {
+      height: 100%;
+    }
+  }
+</style>
