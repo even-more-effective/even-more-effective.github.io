@@ -12,8 +12,9 @@ import MapSection from '../components/MapSection.astro';
     <div class="container">
       <div class="content-wrapper">
         <div class="text-content">
-          <h1>Altruismo Eficaz <br>UPY</h1>
-          <p>Impacto positivo basado en evidencia y razón.</p>
+          <h1>Altruismo Eficaz <br><span class="highlight">EA</span> UPY</h1>
+          <p>Impacto positivo basado en <span class="highlight">evidencia</span> y <span class="highlight">razón</span>.</p>
+          <p>Dedicados a encontrar formas efectivas de hacer el mayor bien posible usando pensamiento crítico y análisis científico.</p>
         </div>
         
         <div class="image-container">
@@ -78,31 +79,6 @@ import MapSection from '../components/MapSection.astro';
     min-height: 80vh;
     padding: 5% 2%;
     position: relative;
-    overflow: hidden;
-  }
-  
-  .hero-section::before {
-    content: "";
-    position: absolute;
-    top: -10%;
-    right: -5%;
-    width: 40%;
-    height: 70%;
-    background: radial-gradient(circle, rgba(139, 107, 255, 0.15) 0%, rgba(139, 107, 255, 0) 70%);
-    border-radius: 50%;
-    z-index: -1;
-  }
-
-  .hero-section::after {
-    content: "";
-    position: absolute;
-    bottom: -15%;
-    left: -10%;
-    width: 50%;
-    height: 80%;
-    background: radial-gradient(circle, rgba(139, 107, 255, 0.1) 0%, rgba(139, 107, 255, 0) 70%);
-    border-radius: 50%;
-    z-index: -1;
   }
 
   .spacer {
@@ -133,11 +109,16 @@ import MapSection from '../components/MapSection.astro';
     line-height: 1.1;
     margin-bottom: 1rem;
   }
+  
+  .highlight {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
 
   p {
     font-size: clamp(1rem, 1.2vw, 1.1rem);
     color: var(--color-text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     max-width: 600px;
   }
   
