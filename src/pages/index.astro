@@ -78,6 +78,31 @@ import MapSection from '../components/MapSection.astro';
     min-height: 80vh;
     padding: 5% 2%;
     position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 40%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(139, 107, 255, 0.15) 0%, rgba(139, 107, 255, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 50%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(139, 107, 255, 0.1) 0%, rgba(139, 107, 255, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
   }
 
   .spacer {
@@ -125,6 +150,11 @@ import MapSection from '../components/MapSection.astro';
     height: auto;
     border-radius: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container:hover img {
+    transform: scale(1.02);
   }
 
   /* Estilos para la sección de información */
@@ -230,7 +260,7 @@ import MapSection from '../components/MapSection.astro';
   
   /* Estilos para la sección Únete */
   .join-section {
-    background-color: #1a1a1a; /* Un tono ligeramente más oscuro que el fondo principal */
+    background-color: #202020; /* Un tono más claro para mayor contraste */
     padding: 8% 2%;
     position: relative;
     margin: 5% 0;
