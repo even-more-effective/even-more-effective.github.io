@@ -230,6 +230,18 @@ import MapSection from '../components/MapSection.astro';
     .spacer {
       height: 5vh;
     }
+    
+    .info-boxes {
+      gap: 20px; /* Aumentamos el espacio entre cajas */
+      margin-top: 15px; /* Añadimos espacio adicional arriba */
+    }
+    
+    .info-box {
+      max-width: 100%; /* Asegura que las cajas no sean demasiado anchas */
+      padding: 7%; /* Reduce ligeramente el padding */
+      height: auto; /* Altura automática basada en contenido */
+      min-height: 100px; /* Altura mínima para consistencia */
+    }
   }
 
   @media (max-width: 768px) {
@@ -262,6 +274,52 @@ import MapSection from '../components/MapSection.astro';
     
     .info-content h2 {
       font-size: 1.75rem;
+    }
+    
+    .info-content p {
+      font-size: 1rem;
+    }
+    
+    .info-boxes {
+      gap: 25px; /* Más espacio entre las cajas en móvil */
+    }
+    
+    .info-box {
+      padding: 6%;
+      margin-bottom: 0; /* Elimina margen inferior */
+      max-height: 150px; /* Controla la altura máxima */
+    }
+    
+    .info-box h3 {
+      font-size: 1.1rem;
+    }
+    
+    .info-box p {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .info-content h2 {
+      font-size: 1.6rem;
+    }
+    
+    .info-boxes {
+      gap: 30px; /* Aún más espacio en pantallas muy pequeñas */
+    }
+    
+    .info-box {
+      max-height: 130px; /* Altura máxima reducida */
+      padding: 5%; /* Padding reducido */
+    }
+    
+    .info-box h3 {
+      font-size: 1rem;
+      margin-bottom: 2%;
+    }
+    
+    .info-box p {
+      font-size: 0.8rem;
     }
   }
 </style>

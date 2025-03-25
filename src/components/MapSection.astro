@@ -124,23 +124,61 @@
   
   @media (max-width: 768px) {
     .map-section h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
+    }
+    
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
     }
     
     .contact-info {
       flex-direction: column;
+      gap: 1.25rem;
     }
     
     .info-item {
       min-width: 100%;
+      padding: 1.25rem;
+    }
+    
+    .info-item h3 {
+      font-size: 1.1rem;
+    }
+    
+    .info-item p {
+      font-size: 0.9rem;
     }
     
     .map-container {
       height: 300px;
+      margin-bottom: 2rem;
     }
     
     .map-container iframe {
       height: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .map-section h2 {
+      font-size: 1.6rem;
+    }
+    
+    .subtitle {
+      font-size: 0.9rem;
+    }
+    
+    .info-item {
+      padding: 1rem;
+    }
+    
+    .info-item h3 {
+      font-size: 1rem;
+    }
+    
+    .info-item p {
+      font-size: 0.85rem;
     }
   }
 </style>
