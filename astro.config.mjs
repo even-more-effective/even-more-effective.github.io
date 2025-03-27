@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
-  server: {
-    host: '0.0.0.0'
-  }
+  site: 'https://playmaker3334.github.io',
+  base: '/EA_website',
+  // otras configuraciones que ya tengas
 });
