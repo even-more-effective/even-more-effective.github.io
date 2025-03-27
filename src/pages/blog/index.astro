@@ -29,7 +29,9 @@ import Footer from '../../components/Footer.astro';
             </div>
           </div>
           
-          <h2 class="post-title">¡Bienvenidos al nuevo sitio de EA UPY!</h2>
+          <h2 class="post-title">
+            <a href="/blog/bienvenidos">¡Bienvenidos al nuevo sitio de EA UPY!</a>
+          </h2>
           
           <div class="post-content">
             <p>Estamos emocionados de lanzar nuestro nuevo sitio web donde compartiremos recursos, eventos y reflexiones sobre el Altruismo Eficaz.</p>
@@ -78,7 +80,9 @@ import Footer from '../../components/Footer.astro';
             </div>
           </div>
           
-          <h2 class="post-title">Próximo evento de voluntariado en UPY</h2>
+          <h2 class="post-title">
+            <a href="/blog/evento-voluntariado">Próximo evento de voluntariado en UPY</a>
+          </h2>
           
           <div class="post-content">
             <p>Nos complace anunciar nuestro próximo evento de voluntariado que se llevará a cabo en el campus de la Universidad Politécnica de Yucatán.</p>
@@ -232,6 +236,17 @@ import Footer from '../../components/Footer.astro';
     font-weight: 600;
   }
   
+  .post-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .post-title a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  
   .post-content {
     margin-bottom: 1.2rem;
     margin-left: 0.7rem;
@@ -381,6 +396,12 @@ import Footer from '../../components/Footer.astro';
           return;
         }
         
+        // Get the link from the post title and navigate to it
+        const titleLink = post.querySelector('.post-title a');
+        if (titleLink) {
+          window.location.href = titleLink.getAttribute('href');
+        }
+        
         // Visual feedback for click
         post.style.boxShadow = `0 0 0 3px var(--color-accent)`;
         
@@ -395,14 +416,24 @@ import Footer from '../../components/Footer.astro';
     shareButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const postEl = btn.closest('.post');
-        const postTitle = postEl.querySelector('.post-title').textContent;
+        const postLink = postEl.querySelector('.post-title a').getAttribute('href');
+        const postTitle = postEl.querySelector('.post-title').textContent.trim();
         
-        // Simulate share with visual feedback
-        btn.style.color = 'var(--color-accent)';
-        setTimeout(() => {
-          btn.style.color = '';
-          alert(`Compartiendo: ${postTitle}`);
-        }, 300);
+        // Use Web Share API if available
+        if (navigator.share) {
+          navigator.share({
+            title: postTitle,
+            url: window.location.origin + postLink
+          }).catch(console.error);
+        } else {
+          // Fallback
+          // Simulate share with visual feedback
+          btn.style.color = 'var(--color-accent)';
+          setTimeout(() => {
+            btn.style.color = '';
+            alert(`Compartiendo: ${postTitle}`);
+          }, 300);
+        }
       });
     });
     
@@ -435,13 +466,14 @@ import Footer from '../../components/Footer.astro';
     copyButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const postEl = btn.closest('.post');
-        const postTitle = postEl.querySelector('.post-title').textContent;
+        const postLink = postEl.querySelector('.post-title a').getAttribute('href');
         
         // Visual feedback
         btn.style.color = 'var(--color-accent)';
         
-        // Simulate copy with feedback
-        navigator.clipboard.writeText(`https://ea-upy.org/blog/${postTitle.toLowerCase().replace(/\s+/g, '-')}`).then(() => {
+        // Copy full URL to clipboard
+        const fullUrl = `${window.location.origin}${postLink}`;
+        navigator.clipboard.writeText(fullUrl).then(() => {
           setTimeout(() => {
             btn.style.color = '';
             alert('¡Enlace copiado al portapapeles!');
