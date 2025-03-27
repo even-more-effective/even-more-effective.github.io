@@ -1,0 +1,711 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+// Datos de contacto
+const contactInfo = {
+  email: "contacto@eaupy.org",
+  phone: "+52 999 123 4567",
+  location: "Universidad Politécnica de Yucatán, Mérida, México",
+  socialMedia: [
+    { name: "Twitter", url: "https://twitter.com/eaupy", icon: "twitter" },
+    { name: "Instagram", url: "https://instagram.com/eaupy", icon: "instagram" },
+    { name: "LinkedIn", url: "https://linkedin.com/company/eaupy", icon: "linkedin" }
+  ]
+};
+
+// Preguntas frecuentes
+const faqs = [
+  {
+    question: "¿Cómo puedo unirme a EA UPY?",
+    answer: "Puedes unirte asistiendo a nuestras reuniones semanales o completando el formulario de contacto en esta página. También organizamos eventos de introducción al inicio de cada semestre."
+  },
+  {
+    question: "¿Necesito conocimiento previo sobre altruismo eficaz?",
+    answer: "No se requiere experiencia previa. Damos la bienvenida a personas de todos los niveles de conocimiento, desde principiantes hasta aquellos familiarizados con los conceptos del altruismo eficaz."
+  },
+  {
+    question: "¿EA UPY está afiliado a otras organizaciones?",
+    answer: "Somos un grupo estudiantil independiente, pero colaboramos con la red global de Altruismo Eficaz y otras organizaciones afines con las que compartimos valores y objetivos."
+  },
+  {
+    question: "¿Ofrecen oportunidades de voluntariado?",
+    answer: "Sí, regularmente organizamos y participamos en proyectos de voluntariado basados en evidencia. Estos eventos se anuncian en nuestras redes sociales y reuniones."
+  }
+];
+---
+
+<MainLayout title="Contacto | Altruismo Eficaz UPY">
+  <Navigation />
+  
+  <main class="contact-container">
+    <section class="contact-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Conecta con <span class="highlight">EA UPY</span></h1>
+          <p class="subtitle">Estamos aquí para responder tus preguntas y explorar juntos cómo podemos generar un mayor impacto positivo.</p>
+        </div>
+      </div>
+      <div class="wave-separator">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#1a1a1a" fill-opacity="1" d="M0,224L48,229.3C96,235,192,245,288,229.3C384,213,480,171,576,165.3C672,160,768,192,864,197.3C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
+    </section>
+    
+    <section class="contact-main">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-form-container">
+            <h2>Envíanos un mensaje</h2>
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="subject">Asunto</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="general">Información general</option>
+                  <option value="join">Quiero unirme al grupo</option>
+                  <option value="collaboration">Propuesta de colaboración</option>
+                  <option value="speaker">Invitación como ponente</option>
+                  <option value="other">Otro</option>
+                </select>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="¿En qué podemos ayudarte?" rows="5" required></textarea>
+              </div>
+              
+              <div class="form-group full-width consent-group">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">Acepto que EA UPY se comunique conmigo respecto a esta consulta.</label>
+              </div>
+              
+              <button type="submit" class="submit-button">
+                <span>Enviar mensaje</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.94607 9.31543C1.42353 9.14125 1.4194 8.86022 1.95682 8.68108L21.043 2.31901C21.5715 2.14285 21.8746 2.43866 21.7265 2.95694L16.2733 22.0432C16.1223 22.5716 15.8177 22.59 15.5944 22.0876L11.9999 14L17.9999 6.00005L9.99992 12L1.94607 9.31543Z" fill="currentColor"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+          
+          <div class="contact-info-container">
+            <div class="info-card">
+              <h2>Información de contacto</h2>
+              
+              <div class="info-list">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.238L12.072 14.338L4 7.216V19H20V7.238ZM4.511 5L12.061 11.662L19.502 5H4.511Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <div class="info-content">
+                    <h3>Correo electrónico</h3>
+                    <p><a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a></p>
+                  </div>
+                </div>
+                
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.36556 10.6821C10.302 12.5491 11.4529 14.3053 13.0238 15.6526C13.2414 15.8315 13.5171 15.9092 13.7925 15.8654C14.0677 15.8215 14.3125 15.6598 14.4598 15.4211L15.306 13.8767C15.4266 13.6723 15.6118 13.5177 15.832 13.4439L18.9699 12.4115C19.2094 12.3317 19.4716 12.3524 19.6983 12.4693C19.925 12.5861 20.099 12.7905 20.1799 13.0352L21.1985 16.0893C21.2983 16.3814 21.2697 16.7051 21.1209 16.9766C20.972 17.2481 20.7177 17.4427 20.4217 17.5106C18.7331 17.9237 16.9575 17.3999 15.3581 16.4129C12.3815 14.5329 9.83108 12.1431 7.60233 9.27906L7.50718 9.1541C6.50548 7.77242 6.14915 5.9809 6.62536 4.29289C6.67538 4.01385 6.84247 3.76801 7.08579 3.61407C7.32911 3.46013 7.62537 3.42274 7.90063 3.50983L11.0371 4.50068C11.2843 4.58552 11.4854 4.76559 11.5941 5.00066C11.7029 5.23571 11.7082 5.50457 11.6089 5.74406L10.509 8.86036C10.4388 9.08767 10.2955 9.28133 10.1033 9.41244L8.58857 10.509C8.33776 10.6405 8.16468 10.8727 8.12534 11.1401C8.08599 11.4075 8.185 11.6792 8.39063 11.8694C8.69475 12.1486 9.01174 12.4105 9.34962 12.654L9.36556 10.6821Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <div class="info-content">
+                    <h3>Teléfono</h3>
+                    <p><a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a></p>
+                  </div>
+                </div>
+                
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <div class="info-content">
+                    <h3>Ubicación</h3>
+                    <p>{contactInfo.location}</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="social-media">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                  {contactInfo.socialMedia.map(social => (
+                    <a href={social.url} target="_blank" rel="noopener noreferrer" class="social-link" aria-label={social.name}>
+                      {social.icon === "twitter" && (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M22.162 5.65593C21.3985 5.99362 20.589 6.2154 19.76 6.31393C20.6337 5.79136 21.2877 4.96894 21.6 3.99993C20.78 4.48793 19.881 4.82993 18.944 5.01493C18.3146 4.34151 17.4803 3.89489 16.5709 3.74451C15.6615 3.59413 14.7279 3.74842 13.9153 4.18338C13.1026 4.61834 12.4564 5.30961 12.0771 6.14972C11.6978 6.98983 11.6067 7.93171 11.818 8.82893C10.1551 8.74558 8.52832 8.31345 7.04328 7.56059C5.55823 6.80773 4.24812 5.75097 3.19799 4.45893C2.82628 5.09738 2.63095 5.82315 2.63199 6.56193C2.63199 8.01193 3.36999 9.29293 4.49199 10.0429C3.828 10.022 3.17862 9.84271 2.59799 9.51993V9.57193C2.59819 10.5376 2.93236 11.4735 3.54384 12.221C4.15532 12.9684 5.00647 13.4814 5.95299 13.6729C5.33661 13.84 4.6903 13.8646 4.06299 13.7449C4.32986 14.5762 4.85 15.3031 5.55058 15.824C6.25117 16.345 7.09712 16.6337 7.96999 16.6499C7.10247 17.3313 6.10917 17.8349 5.04687 18.1321C3.98458 18.4293 2.87412 18.5142 1.77899 18.3819C3.69069 19.6114 5.91609 20.2641 8.18899 20.2619C15.882 20.2619 20.089 13.8889 20.089 8.36193C20.089 8.18193 20.084 7.99993 20.076 7.82193C20.8949 7.2301 21.6016 6.49695 22.163 5.65693L22.162 5.65593Z" fill="currentColor"/>
+                        </svg>
+                      )}
+                      {social.icon === "instagram" && (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z" fill="currentColor"/>
+                          <path d="M16.8294 3.23535C17.1865 3.06189 17.5747 2.97221 17.9687 2.97057C18.3627 2.96894 18.7517 3.05539 19.1105 3.22598C19.4693 3.39658 19.7879 3.64676 20.0393 3.95734C20.2907 4.26791 20.4676 4.62918 20.5566 5.01545C20.655 5.45143 20.932 9.47356 20.932 12.0001C20.932 14.5266 20.6729 18.532 20.5566 18.9847C20.4682 19.3711 20.2918 19.7326 20.0407 20.0435C19.7897 20.3543 19.4714 20.6048 19.1128 20.7758C18.7542 20.9467 18.3653 21.0334 17.9713 21.032C17.5773 21.0306 17.189 20.9413 16.8319 20.7681C16.4116 20.5601 11.4348 20.2871 7.93018 20.2871C4.42552 20.2871 -0.532193 20.5568 -0.958785 20.7681C-1.31569 20.9419 -1.70378 21.0316 -2.09774 21.0333C-2.4917 21.0351 -2.88064 20.9487 -3.23919 20.7781C-3.59774 20.6075 -3.91598 20.3572 -4.16702 20.0466C-4.41806 19.736 -4.59453 19.3748 -4.68313 18.9886C-4.79234 18.5541 -5.06835 14.5177 -5.06835 12.0001C-5.06835 9.48247 -4.76614 5.47585 -4.68313 5.01545C-4.59439 4.62926 -4.41787 4.26795 -4.16686 3.95732C-3.91586 3.64669 -3.5976 3.39644 -3.23898 3.22583C-2.88036 3.05521 -2.49132 2.96874 -2.09726 2.97042C-1.7032 2.97209 -1.31504 3.06189 -0.958785 3.23535C-0.538497 3.44336 4.42552 3.71315 7.93018 3.71315C11.4348 3.71315 16.4092 3.44336 16.8294 3.23535ZM7.93018 5.14388C4.3688 5.14388 -0.0209544 5.41992 -0.280906 5.5376C-0.368121 5.58794 -0.464397 5.61665 -0.563307 5.62138C-0.662217 5.6261 -0.760882 5.60672 -0.852685 5.56481C-0.944488 5.52291 -1.02718 5.45961 -1.09503 5.37954C-1.16288 5.29948 -1.21429 5.20475 -1.24573 5.10198C-1.33888 4.78077 -1.62933 1.14505 -1.62933 -0.000130188C-1.62933 -1.14505 -1.36238 -4.8703 -1.24573 -5.10198C-1.21399 -5.20463 -1.16239 -5.29922 -1.09441 -5.37918C-1.02643 -5.45913 -0.943751 -5.52233 -0.851999 -5.56419C-0.760247 -5.60605 -0.661649 -5.6254 -0.562802 -5.62072C-0.463954 -5.61603 -0.367735 -5.58741 -0.280637 -5.53735C-0.0206862 -5.41967 4.36856 -5.14363 7.93018 -5.14363C11.4918 -5.14363 15.879 -5.41967 16.139 -5.5376C16.2262 -5.58794 16.3225 -5.61665 16.4214 -5.62138C16.5204 -5.6261 16.619 -5.60672 16.7108 -5.56481C16.8026 -5.52291 16.8853 -5.45961 16.9532 -5.37954C17.021 -5.29948 17.0724 -5.20475 17.1039 -5.10198C17.197 -4.78077 17.4897 -1.14505 17.4897 -0.000130188C17.4897 1.14505 17.2227 4.8703 17.1039 5.10198C17.0722 5.20463 17.0206 5.29922 16.9526 5.37918C16.8846 5.45913 16.8019 5.52233 16.7101 5.56419C16.6184 5.60605 16.5198 5.6254 16.4209 5.62072C16.3221 5.61603 16.2259 5.58741 16.1388 5.53735C15.8788 5.41992 11.4891 5.14388 7.93018 5.14388ZM12 7.56861C13.1042 7.56861 14.1838 7.96501 15.0037 8.6927C15.8237 9.42039 16.4297 10.4329 16.7147 11.5729C16.9997 12.7129 16.949 13.9232 16.5704 15.0309C16.1918 16.1386 15.5054 17.0848 14.6124 17.7244C13.7194 18.364 12.6667 18.6648 11.5961 18.579C10.5254 18.4932 9.51531 18.0255 8.72927 17.2529C7.94322 16.4802 7.42968 15.4467 7.28057 14.3306C7.13145 13.2144 7.35428 12.0847 7.91265 11.0994C8.2934 10.3664 8.83911 9.73752 9.50505 9.26093C10.171 8.78435 10.9384 8.47358 11.7444 8.35486C11.8285 8.34292 11.9143 8.33695 12 8.33695V7.56861ZM17.9687 6.33334C17.786 6.33334 17.6054 6.28974 17.4401 6.20602C17.2747 6.1223 17.129 6.0006 17.0144 5.85099C16.8999 5.70138 16.8192 5.5273 16.7787 5.34171C16.7382 5.15612 16.7389 4.96351 16.7808 4.77826C16.8227 4.59301 16.9046 4.41957 17.0203 4.27093C17.136 4.1223 17.2826 4.00193 17.4486 3.91975C17.6146 3.83757 17.7956 3.79569 17.9782 3.79749C18.1608 3.79929 18.3409 3.84471 18.5051 3.93016C18.8277 4.09826 19.0512 4.39826 19.1188 4.74761C19.1863 5.09697 19.091 5.45678 18.8593 5.7299C18.6277 6.00303 18.2857 6.16046 17.9297 6.16046L17.9687 6.33334Z" fill="currentColor"/>
+                        </svg>
+                      )}
+                      {social.icon === "linkedin" && (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.335 18.339H15.67V14.162C15.67 13.166 15.65 11.884 14.28 11.884C12.891 11.884 12.679 12.968 12.679 14.089V18.339H10.013V9.75H12.573V10.92H12.608C12.966 10.246 13.836 9.533 15.136 9.533C17.836 9.533 18.336 11.311 18.336 13.624V18.339H18.335ZM7.003 8.575C6.79956 8.57526 6.59806 8.53537 6.41006 8.45761C6.22207 8.37984 6.05127 8.26574 5.90746 8.12184C5.76365 7.97793 5.64965 7.80706 5.57201 7.61901C5.49437 7.43097 5.4546 7.22944 5.455 7.026C5.4552 6.71983 5.54618 6.4206 5.71644 6.16615C5.8867 5.91169 6.12859 5.71343 6.41153 5.59645C6.69447 5.47947 7.00574 5.44902 7.30598 5.50894C7.60622 5.56886 7.88196 5.71648 8.09831 5.93311C8.31466 6.14974 8.46191 6.42566 8.52145 6.72598C8.58099 7.0263 8.55013 7.33753 8.43278 7.62032C8.31544 7.9031 8.11687 8.14474 7.86219 8.31467C7.60751 8.4846 7.30817 8.5752 7.002 8.575H7.003ZM8.339 18.339H5.666V9.75H8.34V18.339H8.339ZM19.67 3H4.329C3.593 3 3 3.58 3 4.297V19.703C3 20.42 3.594 21 4.328 21H19.666C20.4 21 21 20.42 21 19.703V4.297C21 3.58 20.4 3 19.666 3H19.669H19.67Z" fill="currentColor"/>
+                        </svg>
+                      )}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6762284659367!2d-89.64690192392386!3d21.02144658060046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5677570919f8a1%3A0xb79b9718562bec92!2sUniversidad%20Polit%C3%A9cnica%20de%20Yucat%C3%A1n!5e0!3m2!1ses-419!2smx!4v1676598140562!5m2!1ses-419!2smx" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="faq-section">
+      <div class="container">
+        <h2>Preguntas frecuentes</h2>
+        
+        <div class="faq-container" id="faqContainer">
+          {faqs.map((faq, index) => (
+            <div class="faq-item">
+              <button class="faq-question" data-index={index}>
+                {faq.question}
+                <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 15.713L18.01 9.70299L16.597 8.28799L12 12.888L7.40399 8.28799L5.98999 9.70199L12 15.713Z" fill="currentColor"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>
+
+<script>
+  // Manejo del formulario
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Aquí irían las validaciones y el envío de datos
+      // Solo simulamos un envío exitoso
+      
+      const submitButton = this.querySelector('button[type="submit"]');
+      submitButton.innerHTML = '<span>Enviando...</span>';
+      submitButton.disabled = true;
+      
+      setTimeout(() => {
+        this.innerHTML = `
+          <div class="success-message">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11.003 16L18.073 8.929L16.659 7.515L11.003 13.172L8.174 10.343L6.76 11.757L11.003 16Z" fill="#8B6BFF"/>
+            </svg>
+            <h3>¡Mensaje enviado!</h3>
+            <p>Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.</p>
+            <a href="/contact" class="return-link">Volver al formulario</a>
+          </div>
+        `;
+      }, 2000);
+    });
+  }
+  
+  // Manejo de las FAQ (preguntas frecuentes)
+  const faqContainer = document.getElementById('faqContainer');
+  if (faqContainer) {
+    const faqQuestions = faqContainer.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const isOpen = answer.style.maxHeight;
+        
+        // Cerrar todas las respuestas abiertas
+        faqContainer.querySelectorAll('.faq-answer').forEach(item => {
+          item.style.maxHeight = null;
+        });
+        
+        faqContainer.querySelectorAll('.faq-question').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Abrir la respuesta clickeada (si no estaba abierta)
+        if (!isOpen) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          this.classList.add('active');
+        }
+      });
+    });
+    
+    // Abrir la primera pregunta por defecto
+    if (faqQuestions.length > 0) {
+      faqQuestions[0].click();
+    }
+  }
+</script>
+
+<style>
+  /* Generales */
+  .contact-container {
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+  }
+  
+  .highlight {
+    color: var(--color-accent);
+  }
+  
+  /* Hero Section */
+  .contact-hero {
+    padding: 6rem 0 0;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1f1f1f 0%, #252525 100%);
+    min-height: 300px;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 6rem;
+  }
+  
+  .contact-hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .wave-separator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .wave-separator svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 80px;
+  }
+  
+  /* Contact Main Section */
+  .contact-main {
+    padding: 4rem 0;
+    background-color: #1a1a1a;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  /* Form Section */
+  .contact-form-container h2 {
+    margin-bottom: 2.5rem;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    width: calc(50% - 0.75rem);
+    position: relative;
+  }
+  
+  .form-group.full-width {
+    width: 100%;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    background-color: #252525;
+    color: var(--color-text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(139, 107, 255, 0.2);
+  }
+  
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .consent-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  .consent-group input {
+    width: auto;
+    margin-top: 0.2rem;
+  }
+  
+  .consent-group label {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+  }
+  
+  .submit-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-accent);
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    margin-left: auto;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-3px);
+  }
+  
+  .submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: rgba(139, 107, 255, 0.05);
+    border-radius: 1rem;
+    border: 1px solid rgba(139, 107, 255, 0.2);
+  }
+  
+  .success-message h3 {
+    font-size: 1.6rem;
+    margin: 1rem 0 0.5rem;
+    color: var(--color-accent);
+  }
+  
+  .success-message p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+  }
+  
+  .return-link {
+    display: inline-block;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .return-link:hover {
+    transform: translateX(5px);
+  }
+  
+  /* Contact Info Section */
+  .contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .info-card {
+    background-color: #252525;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(139, 107, 255, 0.1);
+    border-radius: 0.5rem;
+    color: var(--color-accent);
+  }
+  
+  .info-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .info-content p,
+  .info-content a {
+    color: var(--color-text-secondary);
+  }
+  
+  .info-content a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  
+  .social-media h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(139, 107, 255, 0.1);
+    border-radius: 50%;
+    color: var(--color-accent);
+    transition: all 0.3s ease;
+  }
+  
+  .social-link:hover {
+    background-color: var(--color-accent);
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 250px;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    padding: 5rem 0;
+    background-color: #121212;
+  }
+  
+  .faq-container {
+    margin-top: 2rem;
+    max-width: 800px;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    color: var(--color-accent);
+  }
+  
+  .faq-question.active {
+    color: var(--color-accent);
+  }
+  
+  .arrow-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-question.active .arrow-icon {
+    transform: rotate(180deg);
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .faq-answer p {
+    padding: 0 1.2rem 1.2rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 968px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-form-container,
+    .contact-info-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .contact-hero .subtitle {
+      font-size: 1rem;
+    }
+    
+    .form-group {
+      width: 100%;
+    }
+    
+    .faq-question {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-hero {
+      padding: 4rem 0 0;
+    }
+    
+    .contact-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .hero-content {
+      padding-bottom: 4rem;
+    }
+    
+    .contact-main {
+      padding: 3rem 0;
+    }
+    
+    .submit-button {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .info-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .info-content {
+      padding-left: 0.5rem;
+    }
+  }
+</style>
