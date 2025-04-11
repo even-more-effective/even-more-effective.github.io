@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "dev:docker": "NODE_ENV=development astro dev",
     "build": "astro build",
+    "build:prod": "NODE_ENV=production astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
