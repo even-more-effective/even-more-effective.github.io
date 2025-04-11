@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "dev:docker": "astro dev --config docker.config.mjs",
+    "dev:docker": "astro dev --config docker-astro.config.js",
     "build": "astro build",
-    "build:prod": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
