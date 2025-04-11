@@ -40,6 +40,12 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Debug output
+        run: |
+          echo "Contents of dist directory:"
+          ls -la dist/
+          echo "Checking if index.html exists:"
+          test -f dist/index.html && echo "index.html exists" || echo "index.html NOT FOUND"
       - name: Create .nojekyll file
         run: touch dist/.nojekyll
       - name: Setup Pages
