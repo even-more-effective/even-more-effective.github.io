@@ -8,4 +8,4 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
-    command: npm run dev:docker -- --host 0.0.0.0
+    command: ./dev.sh

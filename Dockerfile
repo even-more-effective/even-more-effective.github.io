@@ -17,8 +17,11 @@ EXPOSE 4321
 # Establecer explícitamente el entorno de desarrollo
 ENV NODE_ENV=development
 
+# Make the dev script executable
+RUN chmod +x dev.sh
+
 # Comando para ejecutar la aplicación en modo desarrollo
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+CMD ["./dev.sh"]
 
 
 
