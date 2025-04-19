@@ -6,26 +6,50 @@ import Footer from '../../components/Footer.astro';
 // Datos de miembros (simulados) - reducido a 3
 const members = [
   {
-    name: "Alejandra Méndez",
-    role: "Coordinadora General",
-    bio: "Estudiante de Ingeniería en Desarrollo Sostenible con interés en el análisis de impacto de intervenciones climáticas.",
-    focus: ["Cambio Climático", "Análisis de Datos"],
-    image: "/Foto_EA_UPY.jpg",
+    name: "Angel Tenorio",
+    role: "AI Safety",
+    bio: "Ingeniero en sistemas computacionales con 8 años de experiencia como programador en varios lenguajes. Interesado en ciencia de datos e inteligencia artificial.",
+    focus: ["AI Safety", "Data Science", "Software Development"],
+    image: "/Angel.jpg",
     contact: "alejandra@example.com"
   },
   {
-    name: "Carlos Herrera",
-    role: "Coordinador de Investigación",
-    bio: "Estudiante de posgrado en Economía aplicando métodos cuantitativos para evaluar intervenciones de desarrollo.",
-    focus: ["Pobreza Global", "Métodos de Evaluación"],
-    image: "/Foto_EA_UPY.jpg",
-    contact: "carlos@example.com"
+    name: "Isabel Camara",
+    role: "AI Governance",
+    bio: "Ingeniera en Datos siempre en busca de nuevo conocimiento.",
+    focus: ["AI Governance", "Data Engineering", "Research"],
+    image: "/Isabel.jpeg",
+    contact: "isabelmontalvo24@outlook.com"
   },
   {
-    name: "Diana Pech",
-    role: "Coordinadora de Eventos",
+    name: "Janeth Valdivia",
+    role: "Coordinator",
+    bio: "Economista con experiencia en administración. Estudiante de Ingeniería en Datos y coordinadora de Effective Altruism UPY",
+    focus: ["Coordination", "Economics", "Data Engineering"],
+    image: "/Jan.JPG",
+    contact: "jannea2024@gmail.com"
+  },
+  {
+    name: "Jorge Luis Castillo",
+    role: "Co-Coordinator",
+    bio: "Estudiante de ingeniería en datos con gran interés en adquirir conocimiento tecnológico y político. Coordinador del club EA UPY e imparte el curso Introfellowship.",
+    focus: ["Co-Coordination", "Data Engineering", "Political Science"],
+    image: "/Foto_EA_UPY.jpg",
+    contact: "bacsub1111@gmail.com"
+  },
+  {
+    name: "Fernando Castillo",
+    role: "Infosec",
     bio: "Estudiante de Psicología interesada en bienestar animal y comunicación efectiva de ideas altruistas.",
     focus: ["Bienestar Animal", "Comunicación"],
+    image: "/Foto_EA_UPY.jpg",
+    contact: "diana@example.com"
+  },
+  {
+    name: "Karime Pacheco",
+    role: "Co-Coordinator",
+    bio: "Estudiante de Ingeniería en Datos en la UPY con gran interés en estadística, modelado de riesgos y pronóstico. Aspira a ser educadora.",
+    focus: ["Coordination", "Data Engineering", "Statistics"],
     image: "/Foto_EA_UPY.jpg",
     contact: "diana@example.com"
   }
@@ -33,18 +57,7 @@ const members = [
 
 // Asesores
 const advisors = [
-  {
-    name: "Dra. Sofía Castellanos",
-    position: "Profesora de Economía",
-    bio: "Especialista en economía del desarrollo y evaluación de impacto social.",
-    image: "/Foto_EA_UPY.jpg",
-  },
-  {
-    name: "Dr. Javier Rodríguez",
-    position: "Profesor de Ética Aplicada",
-    bio: "Investigador en filosofía moral y toma de decisiones éticas en contextos de incertidumbre.",
-    image: "/Foto_EA_UPY.jpg",
-  }
+ 
 ];
 ---
 
@@ -106,7 +119,7 @@ const advisors = [
       </div>
       
       <div class="advisors-section">
-        <h2>Asesores Académicos</h2>
+        
         <div class="advisors-grid">
           {advisors.map(advisor => (
             <div class="advisor-card">
@@ -205,13 +218,13 @@ const advisors = [
   /* Grid de equipo */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 10rem;
     margin-bottom: 4rem;
   }
   
   .member-card {
-    perspective: 1000px;
+    perspective: 2000px;
     height: 420px; /* Altura aumentada para acomodar fotos de retrato */
   }
   
@@ -316,7 +329,7 @@ const advisors = [
   .contact-info {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 5 rem;
     font-size: 0.85rem;
     color: var(--color-text-secondary);
   }

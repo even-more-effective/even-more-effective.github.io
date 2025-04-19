@@ -1,9 +1,18 @@
 ---
+// ... (cualquier importación que tengas)
 ---
 
 <footer>
   <div class="container">
     <div class="footer-content">
+      <div class="social-icons-footer">
+        <a href="https://www.linkedin.com/company/effective-altruism-upy/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-icon-footer linkedin">
+          <img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png" alt="Logo de LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/ea_upy/" target="_blank" rel="noopener noreferrer" class="social-icon-footer instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.228-1.691 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.069-1.644-.069-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.699-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-7.434 3.276-7.635 7.635-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 3.276 7.435 7.635 7.635 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 7.43-.205 7.635-7.635.059-1.281.073-1.689.073-4.948 0-3.259-.014-3.667-.073-4.948-.2-4.354-3.272-7.43-7.635-7.635-1.28-.058-1.689-.072-4.948-.072z"/><path d="M12 5.812c-3.195 0-5.813 2.617-5.813 5.813 0 3.195 2.618 5.813 5.813 5.813 3.195 0 5.813-2.618 5.813-5.813 0-3.196-2.618-5.813-5.813-5.813zm0 9.007c-1.769 0-3.2-1.431-3.2-3.2s1.431-3.2 3.2-3.2 3.2 1.431 3.2 3.2-1.431 3.2-3.2 3.2z"/><circle cx="17.587" cy="6.587" r="1.014"/></svg>
+        </a>
+      </div>
       <div class="copyright">
         © 2025 Altruismo Eficaz UPY. All rights reserved.
       </div>
@@ -17,15 +26,82 @@
     margin-top: 4rem;
     background-color: var(--color-footer-bg, #0c0c0c);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center; /* Centrar el contenido del footer */
   }
-  
+
   .footer-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Alinear los elementos verticalmente */
+    align-items: center; /* Centrar los elementos horizontalmente */
   }
-  
+
+  .social-icons-footer {
+    display: flex;
+    justify-content: center;
+    gap: 1.75rem; /* Espacio entre iconos */
+    margin-bottom: 1.75rem; /* Espacio inferior */
+  }
+
+  .social-icon-footer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* Tamaño del contenedor */
+    height: 45px; /* Tamaño del contenedor */
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil */
+    color: #fff; /* Color para el SVG de Instagram */
+    transition: all 0.3s ease;
+    overflow: hidden; /* Para que la imagen respete el border-radius */
+  }
+
+  .social-icon-footer:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  .social-icon-footer img {
+    display: block;
+    width: 60%; /* Reducir el tamaño de la imagen de LinkedIn */
+    height: 60%; /* Reducir el tamaño de la imagen de LinkedIn */
+    object-fit: contain; /* Asegurar que la imagen completa se vea */
+  }
+
+  .social-icon-footer svg {
+    width: 22px; /* Tamaño del SVG de Instagram */
+    height: 22px; /* Tamaño del SVG de Instagram */
+    fill: #fff; /* Color del SVG de Instagram */
+  }
+
   .copyright {
     color: var(--color-text-secondary);
     font-size: 0.875rem;
+  }
+
+  /* Media queries para footer responsivo (opcional) */
+  @media (max-width: 600px) {
+    .social-icons-footer {
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .social-icon-footer {
+      width: 40px;
+      height: 40px;
+    }
+
+    .social-icon-footer img {
+      width: 55%;
+      height: 55%;
+    }
+
+    .social-icon-footer svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+    }
   }
 </style>
