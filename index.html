@@ -3,70 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page - Dummy Content</title>
+    <title>Even More Effective - Elite Consulting</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Test Logo</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <main>
-        <section id="home" class="hero">
-            <h1>Welcome to Our Test Page</h1>
-            <p>This is dummy content created for testing purposes.</p>
-            <button class="cta-button">Click Me!</button>
+        <section class="hero">
+            <div class="hero-content">
+                <img src="images/even-more-effective.png" alt="Even More Effective" class="logo">
+                <h1 class="main-title">Even More Effective</h1>
+                <p class="tagline">Helping EA related organizations to be Even More Effective!</p>
+            </div>
         </section>
 
-        <section id="about" class="content-section">
-            <h2>About Section</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <div class="card-container">
-                <div class="card">
-                    <h3>Card 1</h3>
-                    <p>Some dummy text for card 1</p>
+        <section class="founder">
+            <div class="founder-content">
+                <div class="founder-image-container">
+                    <img src="images/max-eme.jpeg" alt="Jason eMe Pinelo" class="founder-image">
                 </div>
-                <div class="card">
-                    <h3>Card 2</h3>
-                    <p>Some dummy text for card 2</p>
-                </div>
-                <div class="card">
-                    <h3>Card 3</h3>
-                    <p>Some dummy text for card 3</p>
+                <div class="founder-info">
+                    <h2>Jason <span class="eme">eMe</span> Pinelo</h2>
+                    <p class="founder-title">Founder</p>
+                    <p class="founder-description"><span style="font-style: italic; color: var(--accent);">eMe</span> - A clever wordplay: my second name is Maximiliano, and in Spanish, the letter M is pronounced "eme". It also stands for "even More effective" :)</p>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="content-section">
-            <h2>Services Section</h2>
-            <ul>
-                <li>Service 1 - Description of service</li>
-                <li>Service 2 - Description of service</li>
-                <li>Service 3 - Description of service</li>
-            </ul>
-        </section>
-
-        <section id="contact" class="content-section">
-            <h2>Contact Form</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <section class="organizations">
+            <h2 class="section-title">Organizations we have helped to be Even More Effective</h2>
+            <div class="org-grid">
+                <a href="https://lanais.org" target="_blank" class="org-card">
+                    <div class="org-content">
+                        <h3>Latin American Network for AI Safety</h3>
+                        <span class="org-abbr">LANAIS</span>
+                    </div>
+                    <div class="org-arrow">→</div>
+                </a>
+                <a href="https://www.aismx.org" target="_blank" class="org-card">
+                    <div class="org-content">
+                        <h3>AI Safety Mexico</h3>
+                        <span class="org-abbr">AISMX</span>
+                    </div>
+                    <div class="org-arrow">→</div>
+                </a>
+                <a href="https://www.effectivealtruismupy.com" target="_blank" class="org-card">
+                    <div class="org-content">
+                        <h3>Effective Altruism UPY</h3>
+                        <span class="org-abbr">EA-UPY</span>
+                    </div>
+                    <div class="org-arrow">→</div>
+                </a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Test Page. All rights reserved.</p>
+        <p>&copy; 2024 Even More Effective. Excellence in organizational effectiveness.</p>
     </footer>
 
     <script src="script.js"></script>
